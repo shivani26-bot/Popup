@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(10, 10, 102);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  padding: 10px;
+  height: 45px;
+  width: 120px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.popup {
+  width: 400px;
+  border-radius: 5px;
+  background-color: white;
+
+  text-align: center;
+
+  /* to bring the popup in the center of the page */
+  position: absolute;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+
+  padding: 0 30px 30px;
+
+  /* display: none, it is completely removed from the document layout. It does not take up any space on the page, and the elements around it behave as if it does not exist. */
+  /* causes a reflow, meaning the browser recalculates the positions and sizes of the elements on the page. */
+  /* element is not interactive. It cannot be focused, clicked, or receive any user interactions. */
+
+  /* display: none; */
+  /* visibility: hidden, it becomes invisible, but it still takes up space in the document layout. The element is rendered but not shown. */
+  /* does not cause a reflow. The layout remains the same, with the element still occupying its original space. */
+
+  visibility: hidden;
+  /* any changes to the transform property will take 0.4 seconds to complete. */
+  /* any changes to the top property will also take 0.4 seconds to complete. */
+
+  transition: transform 0.4s, top 0.4s;
+}
+
+.show-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+.popup button {
+  background-color: #6fd649;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px 0;
+  height: 45px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.popup img {
+  width: 50px;
+  height: 50px;
+  /* decreases the space outside the element. Instead of adding space, it overlaps the element with the element above it. */
+  margin-top: -25px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.popup h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 30px 0 20px;
+}
